@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const baseConfig = require('./webpack.config.js')
+const baseConfig = require('./webpack.config.dev.js')
 const root = path.resolve(__dirname, '..')
 
 module.exports = merge(baseConfig, {
