@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const baseConfig = require('./webpack.config.dev.js')
+const baseConfig = require('./webpack.config.js')
 const root = path.resolve(__dirname, '..')
 
 module.exports = merge(baseConfig, {
@@ -12,16 +12,16 @@ module.exports = merge(baseConfig, {
   ],
   //配置devServer中内置了express模块并开启服务器
   devServer: {
-	contentBase:'./dist',
+	  contentBase:'./dist',
     historyApiFallback: true, // 404的页面会自动跳转到/页面
     inline: true, // 文件改变自动刷新页面
     progress: true, // 显示编译进度
-    port: 3000, // 服务器端口
+    port: 3001, // 服务器端口
   },
   //应该是webpack-merge更新，导致module并没有合并，而是各自有自己的module
   module:{
   	loaders:[{
-  			test:/\.vue$/,
+  		test:/\.vue$/,
 			loader:'vue-loader',
 			exclude:/node_modules/
   	}]

@@ -10,6 +10,8 @@ module.exports = {
 		//要将其转换为绝对路径，需使用path模块下的resolve函数
 		path:path.resolve(__dirname,'./dist'),
 		filename:'build.js',
+		//publicPath设置的是服务器地址的绝对路径，相当于给向服务器的请求添加了/dist，让其请求服务器dist目录下的资源
+		//当使用style-lolader时必须正确配置publicPath，因为输出文件夹在dist，资源请求路径也应该在dist文件夹下
 		publicPath: '/dist/'
 	},
 	//其他解决方案
